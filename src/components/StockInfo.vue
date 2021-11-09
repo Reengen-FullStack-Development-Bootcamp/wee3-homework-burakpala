@@ -118,7 +118,7 @@
 
 <script>
 import axios from 'axios'
-import Plotly from 'plotly'
+import Plotly from 'plotly.js-dist'
 export default {
   name: "StockInfo",
   props: {
@@ -162,7 +162,7 @@ export default {
       this.getChart(stock)
     },
     getChart(stock){
-      axios.get('https://financialmodelingprep.com/api/v3/historical-price-full/AAPL?timeseries=40&apikey=8d221b7bf1656093515ebc01808da2e4')
+      axios.get('https://financialmodelingprep.com/api/v3/historical-price-full/AAPL?timeseries=5&apikey=8d221b7bf1656093515ebc01808da2e4')
       .then(res=>{
         this.open=[]
         this.close=[]
@@ -205,6 +205,7 @@ export default {
   xaxis: 'x', 
   yaxis: 'y'
 };
+
 
 var data = [trace1];
 
@@ -349,3 +350,4 @@ a {
   margin-top: px;
 }
 </style>
+
